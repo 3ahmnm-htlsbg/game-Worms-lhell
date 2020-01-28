@@ -9,7 +9,7 @@ public class WormController : MonoBehaviour
     
     void Start()
     {
-        if (x>0) {
+       /*if (x>0) {
         
             Debug.Log("x ist größer als 0");
         
@@ -22,12 +22,25 @@ public class WormController : MonoBehaviour
 
         }
 
-        if (text == "oidaaaaaaaa") {
-            Debug.Log("do steht oidaaaaaaaa");
+       if (text == "oidaaaaaaaa") {
+           Debug.Log("do steht oidaaaaaaaa");
         }
         else
-        {
+    {
             Debug.Log("Wos isn mid dia");
+     } */
+        
+        if (x>10) {
+        
+            Debug.Log("x ist größer als 10");
+        
         }
+        
+        else
+        
+        {
+            Debug.Log("x ist kleiner gleich 10");
+        }
+        
     }
 }
