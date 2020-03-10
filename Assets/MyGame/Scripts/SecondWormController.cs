@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 
-public class WormController : MonoBehaviour
+public class SecondWormController : MonoBehaviour
 {
 
     public GameObject bazooka;
@@ -20,8 +20,9 @@ public class WormController : MonoBehaviour
    
    
     public int health = 10;
-
-void Start() {
+    
+    
+    void Start() {
         
             
             healthDisplay.text = health.ToString();
@@ -31,50 +32,48 @@ void Start() {
 
     void Update()
         {
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.I)) 
             {
-            Debug.Log("W is to jump");
+            Debug.Log("I is to jump");
             rb.AddForce(jump);
             }
 
-           if (Input.GetKeyDown(KeyCode.A))
+           if (Input.GetKeyDown(KeyCode.J))
             {
-            Debug.Log("A is to move to the left");
+            Debug.Log("J is to move to the left");
             rb.AddForce(-move);
         }
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.L))
             {
-            Debug.Log("D is to move to the right");
+            Debug.Log("L is to move to the right");
             rb.AddForce(move);
             } 
 
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.B))
             {
-             Debug.Log("C is to shoot");
+             Debug.Log("B is to shoot");
              GameObject sphere = Instantiate(canon, canonPosition.position, Quaternion.identity);
              sphere.GetComponent<Rigidbody>().AddForce(canon.transform.up * shoot);
             }
 
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.U))
             {
-                Debug.Log("Q is to rotate left");
+                Debug.Log("U is to rotate left");
                 bazooka.transform.Rotate(0, 0, -5, Space.Self);
             }
 
         
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.O))
             {
-                Debug.Log("E is to rotate right");
+                Debug.Log("O is to rotate right");
                 bazooka.transform.Rotate(0, 0, 5, Space.Self);
             }
 
     }
 
-        
-        
-        
-        
+    
+   
     
 
         void OnCollisionEnter(Collision collision) {
@@ -85,7 +84,7 @@ void Start() {
             Debug.Log("You hit the DamageZone");
             health = health - 2;
             healthDisplay.text = health.ToString();
-
+      
             } 
             else 
             {
@@ -97,11 +96,10 @@ void Start() {
 
             Debug.Log("You got a Health Package!");
             health = health + 1;
-            Destroy(collision.gameObject);
             healthDisplay.text = health.ToString();
-           }
-           
+            Destroy(collision.gameObject);
         
+           }
     }
 
 }

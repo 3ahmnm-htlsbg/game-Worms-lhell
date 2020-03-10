@@ -19,9 +19,11 @@ WebGL, Mobile, VR Device incl. reference resolution
 
 
 ### Project state: 
+You can move with both Players, shoot with both bazookas, have both healthbars working and displayed and some helathpacks have been placed through out the map.
 
 
 ### Limitations: 
+I can't program and I don't want to, Sorry :/
 
 ### Lessons Learned: 
 
