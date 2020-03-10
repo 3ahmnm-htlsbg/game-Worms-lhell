@@ -11,7 +11,7 @@ public class SecondWormController : MonoBehaviour
     public GameObject bazooka;
     public GameObject canon;
     public Transform canonPosition;
-    public float shoot = 75;
+    public Vector3 shootSpeed;
     public Rigidbody rb;
     public Vector3 jump;
     public Vector3 move;
@@ -53,21 +53,22 @@ public class SecondWormController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.B))
             {
              Debug.Log("B is to shoot");
-             GameObject sphere = Instantiate(canon, canonPosition.position, Quaternion.identity);
-             sphere.GetComponent<Rigidbody>().AddForce(canon.transform.up * shoot);
+             GameObject sphere = Instantiate(canon, canonPosition.transform.position, Quaternion.identity);
+             Rigidbody rigid = sphere.GetComponent<Rigidbody>();
+             rigid.AddForce(shootSpeed);
             }
 
             if (Input.GetKey(KeyCode.U))
             {
                 Debug.Log("U is to rotate left");
-                bazooka.transform.Rotate(0, 0, -5, Space.Self);
+                bazooka.transform.Rotate(0, 0, 5, Space.Self);
             }
 
         
             if (Input.GetKey(KeyCode.O))
             {
                 Debug.Log("O is to rotate right");
-                bazooka.transform.Rotate(0, 0, 5, Space.Self);
+                bazooka.transform.Rotate(0, 0, -5, Space.Self);
             }
 
     }
